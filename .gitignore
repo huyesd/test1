@@ -27,12 +27,13 @@ local TextService = Services.TextService
 local TweenService =Services.TweenService
 local RunService = Services.RunService
 local CoreGui = nil
-if game.Players.LocalPlayer.PlayerGui:WaitForChild("CustomChat") then
+if game.Players.LocalPlayer.PlayerGui:FindFirstChild("CustomChat") then
 	CoreGui = game.Players.LocalPlayer.PlayerGui:FindFirstChild("CustomChat")
 else
 	local CustomChat = Instance.new("ScreenGui")
 	CustomChat.Name = "CustomChat"
 	CustomChat.Parent = game.Players.LocalPlayer.PlayerGui
+	CoreGui = CustomChat
 end
 local TeleportService = Services.TeleportService
 local Workspace = Services.Workspace
